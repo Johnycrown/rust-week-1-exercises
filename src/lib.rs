@@ -4,7 +4,6 @@ pub fn extract_tx_version(raw_tx_hex: &str) -> Result<u32, String> {
     // Step 2: Ensure the transaction has at least 4 bytes
     // Step 3: Extract version (first 4 bytes, little-endian)
     let raw_tx_bytes = hex_to_bytes(raw_tx_hex)?;
-    
 
     if raw_tx_bytes.len() < 4 {
         return Err("Transaction data too short".to_string());
