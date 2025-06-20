@@ -8,7 +8,6 @@ pub fn extract_tx_version(raw_tx_hex: &str) -> Result<u32, String> {
     if raw_tx_bytes.len() < 4 {
         return Err("Transaction data too short".to_string());
     }
-
     let version_bytes = &raw_tx_bytes[0..4];
     let version = u32::from_le_bytes([
         version_bytes[0],
